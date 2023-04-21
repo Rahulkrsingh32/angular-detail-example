@@ -1,0 +1,18 @@
+<h3 *ngIf="!allowEdit" >You are not allowed to edit this blog, As this blog is not published by you :( </h3>
+<div class="row" *ngIf="allowEdit" >
+    <div class="col-md-12">
+        <div class="form-group">
+            <label for="title">
+                Blog Title
+            </label>
+            <input [(ngModel)]="blogTitle" type="text" name="title" id="title" class="form-control">
+        </div>
+        <div class="form-group">
+            <label for="title">
+                Blog Description
+            </label>
+            <input [(ngModel)]="blogDescription" type="text" name="description" id="description" class="form-control">
+        </div>
+        <button type="button" class="btn btn-warning" (click)="onUpdate()">Edit Details</button>
+    </div>
+</div>

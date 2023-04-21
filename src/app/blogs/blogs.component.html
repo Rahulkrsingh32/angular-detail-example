@@ -1,0 +1,25 @@
+<div class="container mt-5">
+    <p class="h1 text-info" >Here are the various Blogs Posted below =></p>
+    <div class="row mt-5">
+        <div class="col-md-6">
+            <div *ngFor="let blog of blogs">
+                <p class="h2">
+                    <a
+                        [routerLink]="['/blogs',blog.sid]"
+                        [queryParams]="{allowEdit:blog.sid===1?'0':'1'}"
+                        class="list-group-item"
+                    >
+                        {{blog.title}}
+                    </a>
+                </p>
+                <p class="h4" >
+                    {{blog.description}}
+                </p>
+            </div>
+            
+        </div>
+        <div class="col-md-6">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>
